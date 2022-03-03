@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core\validation;
+namespace ihate\mvc\validation;
 
-use app\core\Application;
+use ihate\mvc\Application;
 
 class Unique extends Rule {
 

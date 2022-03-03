@@ -1,12 +1,17 @@
 {
-    "name": "ihatesummerr/php-mvc-core",
-    "description": "Ligthweight MVC Framework for PHP",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "ihatesummerr",
-            "email": "ihatesummerr@yahoo.com"
-        }
-    ],
-    "require": {}
+	"name": "ihatesummerr/php-mvc-core",
+	"description": "Ligthweight MVC Framework for PHP",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "ihatesummerr",
+			"email": "ihatesummerr@yahoo.com"
+		}
+	],
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"ihate\\mvc": "."
+		}
+	}
 }

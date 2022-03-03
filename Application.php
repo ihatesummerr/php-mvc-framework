@@ -1,6 +1,6 @@
 <?php
-namespace app\core;
-use app\core\db\Database;
+namespace ihate\mvc;
+use ihate\mvc\db\Database;
 
 class Application {
     public static string $ROOT_DIR;

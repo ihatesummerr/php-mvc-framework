@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core\validation;
+namespace ihate\mvc\validation;
 
 class Correspond extends Rule {
 

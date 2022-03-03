@@ -1,9 +1,9 @@
 <?php
 
-namespace app\core\db;
+namespace ihate\mvc\db;
 
-use app\core\Model;
-use app\core\Application;
+use ihate\mvc\Model;
+use ihate\mvc\Application;
 
 abstract class DbModel extends Model{
 

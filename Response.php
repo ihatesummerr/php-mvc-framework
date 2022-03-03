@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core;
+namespace ihate\mvc;
 
 class Response {
     public function setStatusCode(int $code) {

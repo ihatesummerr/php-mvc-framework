@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core;
+namespace ihate\mvc;
 
-use app\core\exception\NotFoundException;
+use ihate\mvc\exception\NotFoundException;
 
 class Router {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core\exception;
+namespace ihate\mvc\exception;
 
 class NotFoundException extends \Exception {
     protected $code = 404;

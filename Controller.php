@@ -1,9 +1,9 @@
 <?php
 
-namespace app\core;
+namespace ihate\mvc;
 
-use app\core\Application;
-use app\core\middlewares\BaseMiddleware;
+use ihate\mvc\Application;
+use ihate\mvc\middlewares\BaseMiddleware;
 
 class Controller {
 

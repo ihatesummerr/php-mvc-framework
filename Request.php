@@ -4,6 +4,8 @@ namespace ihate\mvc;
 
 class Request {
 
+    private array $routeParams = [];
+
     public function path() {
         $path = $_SERVER['REQUEST_URI'] ?? '/';
         $position = strpos($path, '?');
@@ -16,6 +18,15 @@ class Request {
 
         
 
+    }
+
+    public function setRouteParams($params) {
+        $this->routeParams = $params;
+        return $this;
+    }
+
+    public function getRouteParams() {
+        return $this->routeParams;
     }
 
     public function method() {

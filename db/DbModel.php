@@ -48,6 +48,13 @@ abstract class DbModel extends Model{
 
     }
 
+    public static function find() {
+        $tableName = static::tableName();
+        $statement = self::prepare("SELECT * FROM $tableName");
+        $statement->execute();
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public static function prepare($sql) {
         return Application::$app->db->pdo->prepare($sql);
     }

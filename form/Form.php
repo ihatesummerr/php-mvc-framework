@@ -6,8 +6,8 @@ use ihate\mvc\Model;
 
 class Form {
 
-    public static function begin($action, $method) {
-        echo sprintf('<form class="form" action="%s" method="%s">', $action, $method);
+    public static function begin($action, $method, $opt = '') {
+        echo sprintf('<form class="form" action="%s" method="%s" %s>', $action, $method, $opt);
         return new Form();
     }
 

@@ -28,8 +28,35 @@ abstract class DbModel extends Model{
 
         $statement->execute();
         return true;
+    }
 
+    public function update() {
+        $tableName = $this->tableName();
+        $attributes = $this->attributes();
+        $params = array_map(fn($attribute) => ":$attribute", $attributes);
+        $sql = [];
+        for ($i = 0; $i < count($attributes); $i++) {
+            $sql[] = $attributes[$i] . " = " . $params[$i];
+        }
+        $statement = self::prepare("UPDATE $tableName SET " . implode(', ', $sql) . " WHERE "
+            . $this->primaryKey() . " = '" . $this->{$this->primaryKey()} . "'");
 
+        foreach ($attributes as $attribute) {
+            $statement->bindValue(":$attribute", $this->{$attribute});
+        }
+
+        var_dump($statement);
+
+        $statement->execute();
+        return true;
+    }
+
+    public function delete() {
+        $tableName = $this->tableName();
+        $statement = self::prepare("DELETE FROM $tableName WHERE " . $this->primaryKey() . " = " . "'" . $this->{$this->primaryKey()} . "'");
+
+        $statement->execute();
+        return true;
     }
 
     public static function findOne($where) {
@@ -52,7 +79,7 @@ abstract class DbModel extends Model{
         $tableName = static::tableName();
         $statement = self::prepare("SELECT * FROM $tableName");
         $statement->execute();
-        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $statement->fetchAll(\PDO::FETCH_CLASS, static::class);
     }
 
     public static function prepare($sql) {

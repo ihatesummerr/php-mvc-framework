@@ -11,7 +11,7 @@ class Min extends Rule {
     }
 
     public function validate($value): bool {
-        if (strlen($value) > $this->min) {
+        if (strlen($value) >= $this->min) {
             return true;
         }
         return false;
